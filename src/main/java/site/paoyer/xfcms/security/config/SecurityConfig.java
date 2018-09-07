@@ -3,6 +3,7 @@ package site.paoyer.xfcms.security.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDecisionVoter;
+import org.springframework.security.access.SecurityMetadataSource;
 import org.springframework.security.access.vote.AffirmativeBased;
 import org.springframework.security.access.vote.AuthenticatedVoter;
 import org.springframework.security.access.vote.RoleVoter;
@@ -22,7 +23,6 @@ import site.paoyer.xfcms.security.voter.MethodDecisionVoter;
 import java.util.ArrayList;
 
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig implements WebMvcConfigurer {
 
     @Bean
@@ -39,6 +39,7 @@ public class SecurityConfig implements WebMvcConfigurer {
 
     @Bean
     public AccessDecisionManager accessDecisionManager() {
+//        SecurityMetadataSource
 //        DefaultWebSecurityExpressionHandler
         var decisionVoters = new ArrayList<AccessDecisionVoter<? extends Object>>();
 //        decisionVoters.add(new WebExpressionVoter());
