@@ -1,5 +1,6 @@
-package site.paoyer.xfcms.security.config;
+package site.paoyer.xfcms.config.security;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.SecurityMetadataSource;
 import org.springframework.security.access.method.MapBasedMethodSecurityMetadataSource;
@@ -16,4 +17,5 @@ public class GlobalMethodSecurityConfig extends GlobalMethodSecurityConfiguratio
     protected MethodSecurityMetadataSource customMethodSecurityMetadataSource() {
         return new MyMethodSecurityMetadataSource();
     }
+
 }
